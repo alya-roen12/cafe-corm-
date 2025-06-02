@@ -1,0 +1,38 @@
+
+    /* body */
+    body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #DFD2B6;
+  color: #4b2e2e;
+}
+    
+    
+    
+    
+/* logo */
+    .logo {
+      display: flex;
+      justify-content: flex-start;  /* Aligns items to the left */
+      padding: 10px;               /* Adds some spacing */
+    }
+    .logo-img {
+      width: 200px;                 /* Set an appropriate width for the logo */
+      height: auto;                /* Maintain aspect ratio */
+    }
+    main {
+      display: flex;               /* Allows items to be positioned in a row/row flex layout */
+      justify-content: space-between; /* Spreads items across the available space */
+    }
+
+    .user {
+   background-color: #A34F27;
+   text-align: center;
+   height: 500px;
+   width: 250px;
+   float: left;
+}
+
+    
+
+   
