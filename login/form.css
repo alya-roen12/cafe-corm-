@@ -37,7 +37,7 @@ body
   }
   position: absolute;
   right:0;
-  width: 50%;
+  width: 60%;
   height:100%;
   background-color: #ffffff;
   display: flex;
@@ -72,7 +72,7 @@ form
   font-size: 15px;
   padding:13px;
   background-color: #ffffff;
-  border-radius:8px ;
+  border-radius:25px ;
 
 }
 
@@ -80,15 +80,13 @@ form
 .choose-box label
 {
   font-size:16px;
-  margin:20px;
- 
-  
+  margin:25px;
 }
 
 .button
 {
-  position:relative;
-  left:200px;
+  position:left;
+  margin-left:200;
 }
 
 
