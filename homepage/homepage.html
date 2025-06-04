@@ -1,56 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Corm | Made with Love</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corm Cafe | Made with Love</title>
+   <link rel="stylesheet" href="style.css" />
+   <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo"><img src="asset/corm_logo.png" alt="corm_logo" class="logo-img"></div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href=#contact us>Contact Us</a></li>
-        <li><a href="#about">About Us</a></li>
-      </ul>
+  <div class="navbar">
+    <div class="logo-area">
+      <img src="corm_logo.png" alt="Logo">
+      <span>Corm</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#contact">CONTACT US</a>
+      <a href="#about">ABOUT US</a>
     </nav>
-    <button class="menu-toggle">☰</button>
-  </header>
+
+    <div class="menu-icon" onclick="openSidebar()">&#9776;</div>
+
+    <div id="mySidebar" class="sidebar">
+      <span class="closebtn" onclick="closeSidebar()">×</span>
+      <button onclick="alert('Login clicked')">Login</button>
+      <button onclick="alert('Logout clicked')">Logout</button>
+    </div>
+  </div>
 
   <main>
     <section class="hero">
       <div class="hero-text">
         <h1>Made with love,<br>served with a smile.</h1>
-        <a href="#" class="btn primary">Browse Menu</a>
+        <a href="menu.html" class="btn primary">Browse Menu</a>
       </div>
-      <img src="asset/homepage.png" alt="Main Dish" class="hero-img">
+      <img src="homepage.png" alt="Main Dish" class="hero-img">
     </section>
 
     <section class="menu">
       <div class="menu-items">
         <div class="item">
-          <img src="asset/matcha.jpg" alt="Matcha Latte">
+          <img src="matcha.jpg" alt="Matcha Latte">
           <p>Matcha Latte</p>
         </div>
         <div class="item">
-          <img src="asset/cheesypasta.jpg" alt="Cheesy Pasta">
+          <img src="cheesypasta.jpg" alt="Cheesy Pasta">
           <p>Cheesy Pasta</p>
         </div>
         <div class="item">
-          <img src="asset/brownies.jpeg" alt="Brownies">
+          <img src="brownies.jpeg" alt="Brownies">
           <p>Brownies</p>
         </div>
         <div class="item">
-          <img src="asset/tortilla.jpg" alt="Tortilla">
+          <img src="tortilla.jpg" alt="Tortilla">
           <p>Tortilla</p>
         </div>
       </div>
       <a href="reserve.php" class="btn reserve">Reserve Now</a>
     </section>
   </main>
+
+  <script>
+    function openSidebar() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeSidebar() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+
+    // Close sidebar when clicking outside of it
+    window.addEventListener('click', function(event) {
+      const sidebar = document.getElementById('mySidebar');
+      const menuIcon = document.querySelector('.menu-icon');
+      
+      if (event.target !== menuIcon && !menuIcon.contains(event.target) && 
+          event.target !== sidebar && !sidebar.contains(event.target)) {
+        closeSidebar();
+      }
+    });
+  </script>
 </body>
 </html>
