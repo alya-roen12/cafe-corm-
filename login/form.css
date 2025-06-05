@@ -22,11 +22,14 @@ body {
   border-width: 1px;
   background-color: #a34f27;
 }
-
-h1 {
-  font-size: 36px;
+.Form-box h1 {
+  position: absolute;
+  text-align: left;
+  top: 75px; /* Adjusted to move higher */
+  left: 55%;
+  transform: translateX(-50%);
+  font-size: 50px !important;
   color: #8f3c15;
-  margin-bottom: 20px;
 }
 
 .Form-box {
@@ -50,10 +53,12 @@ form {
 }
 
 .input-box {
+  bottom: -px;
   font-size: 17px;
   position: relative;
   margin: 20px;
 }
+
 .input-box input {
   width: 100%;
   font-size: 15px;
@@ -65,8 +70,13 @@ form {
 .choose-box label {
   font-size: 16px;
   margin: 25px;
+  accent-color: #232323;
 }
+
 .button {
+  position: absolute;
+  bottom: -120px; /* Moves buttons to the bottom */
+  transform: translateX(20%);
   text-align: center;
   margin-left: 160px;
 }
@@ -97,14 +107,14 @@ form {
 .logo {
   width: 119%;
   display: flex;
-  justify-content: center; /* Aligns content to the left */
-  padding-left: 10px; /* Optional: adds some spacing from the left edge */
+  justify-content: center;
+  padding-left: 10px;
   position: relative;
   top: -50px;
 }
 
 .logo-img {
-  max-width: 100px; /* Controls the image size */
+  max-width: 100px;
   height: auto;
 }
 
@@ -117,8 +127,21 @@ form {
 .user {
   width: 119%;
   display: flex;
-  justify-content: center; /* Aligns content to the left */
-  padding-left: 10px; /* Optional: adds some spacing from the left edge */
+  justify-content: center;
+  padding-left: 10px;
   position: relative;
-  top: -50px;
+  top: -30px;
+}
+.user-img {
+  max-width: 400px;
+  height: auto;
+}
+.user h1 {
+  position: absolute;
+  bottom: -80px; /* adjust as needed */
+  left: 49%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #000000;
+  font-size: 43.5px;
 }
