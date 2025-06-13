@@ -1,0 +1,100 @@
+<?php
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['CustEmail'];
+    $username = $_POST['CustUsername'];
+    $password = $_POST['CustPassword'];
+    $phone = $_POST['CustPhoneNumber'];
+    $dob = $_POST['CustDOB'];
+
+    // Connect to the database
+    $conn = new mysqli("localhost", "root", "", "corm");
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Insert data into users table
+    $sql = "INSERT INTO users (CustEmail, CustUsername, CustPassword, CustPhoneNumber, CustDOB)
+            VALUES ('$email', '$username', '$password', '$phone', '$dob')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "<script>alert('Account created successfully');</script>";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Corm Cafe - Create Account</title>
+  <link href="cormcafe" />
+  <style>
+    <?php include 'style.css'; ?>
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <div class="navbar">
+    <div class="logo-area">
+      <img src="corm_logo.png" alt="Logo">
+      <span>Corm</span>
+    </div>
+
+    <div class="nav-links">
+      <a href="slide1.html">HOME</a>
+      <a href="slide3contactus.html">CONTACT US</a>
+      <a href="slide4aboutus.html">ABOUT US</a>
+    </div>
+
+    <div class="menu-icon" onclick="openSidebar()">&#9776;</div>
+
+    <div id="mySidebar" class="sidebar">
+      <span class="closebtn" onclick="closeSidebar()">×</span>
+      <button onclick="alert('Login clicked')">Login</button>
+      <button onclick="alert('Logout clicked')">Logout</button>
+    </div>
+  </div>
+
+  <!-- Big Banner Image -->
+  <div class="banner"></div>
+
+  <!-- Form Section -->
+  <div class="main-content">
+    <div class="form-container">
+      <h2>CREATE ACCOUNT</h2>
+      <form method="post" action="">
+        <input class="form-input" type="CustEmail" name="CustEmail" placeholder="Email Address" required />
+        <input class="form-input" type="text" name="CustUsername" placeholder="CustUsername" required />
+        <input class="form-input" type="CustPassword" name="CustPassword" placeholder="Password" required />
+        <input class="form-input" type="CustPhoneNum" name="CustPhoneNum" placeholder="Phone Number" required />
+        <input class="form-input" type="CustDOB" name="CustDOB" required />
+
+        <div class="button-container">
+          <button class="btn-cancel" type="reset">CANCEL</button>
+          <button class="btn-create" type="submit">CREATE ACCOUNT</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openSidebar() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    function closeSidebar() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+  </script>
+
+</body>
+</html>

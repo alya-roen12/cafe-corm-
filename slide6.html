@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Account | Corm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #e5d3aa;
+    }
+
+    header {
+      background-color: #e5d3aa;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 50px;
+      margin-right: 10px;
+    }
+
+    .logo span {
+      font-size: 32px;
+      font-weight: bold;
+      color: #2c2c2c;
+    }
+
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #6a2c17;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background-image: url('https://img.freepik.com/free-photo/top-view-roasted-chicken-table_23-2148616791.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      height: 200px;
+    }
+
+    .container {
+      display: flex;
+      padding: 30px;
+    }
+
+    .left {
+      width: 30%;
+      padding-right: 20px;
+    }
+
+    .left h2 {
+      font-size: 32px;
+      color: #732c11;
+    }
+
+    .right {
+      width: 70%;
+      background: #f7f7f7;
+      padding: 30px;
+      border-radius: 30px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid #ddd;
+      border-radius: 15px;
+      font-size: 16px;
+      outline: none;
+      background: #fff;
+      color: #444;
+    }
+
+    .form-group i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+    }
+
+    .form-group input::placeholder {
+      padding-left: 25px;
+      color: #aaa;
+    }
+
+    .dob-input {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .dob-input input[type="date"] {
+      padding-left: 50px;
+    }
+
+    .dob-input i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #aaa;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .buttons .cancel {
+      background: black;
+    }
+
+    .buttons .create {
+      background: black;
+    }
+
+    /* Optional Date Picker Box (not functional JS) */
+    .calendar {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    .calendar select, .calendar button {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Flower_icon_1.svg/2048px-Flower_icon_1.svg.png" alt="Corm Logo">
+      <span>Corm</span>
+    </div>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#">CONTACT US</a>
+      <a href="#">ABOUT US</a>
+    </nav>
+  </header>
+
+  <div class="hero"></div>
+
+  <div class="container">
+    <div class="left">
+      <h2>CREATE ACCOUNT</h2>
+      <!-- Calendar Date Picker Placeholder -->
+      <div class="calendar">
+        <strong>May 2025</strong>
+        <br>
+        <table>
+          <tr><td>Su</td><td>Mo</td><td>Tu</td><td>We</td><td>Th</td><td>Fr</td><td>Sa</td></tr>
+          <tr><td>27</td><td>28</td><td>29</td><td>30</td><td>1</td><td>2</td><td>3</td></tr>
+          <tr><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
+          <tr><td>11</td><td><strong style="color:blue;">12</strong></td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td></tr>
+          <tr><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td></tr>
+          <tr><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td></tr>
+        </table>
+        <button>Clear</button> <button>Today</button>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="form-group">
+        <i class="fa fa-user"></i>
+        <input type="email" placeholder="Email Address" />
+      </div>
+      <div class="form-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Username" />
+      </div>
+      <div class="form-group">
+        <i class="fa fa-key"></i>
+        <input type="password" placeholder="Password" />
+      </div>
+      <div class="form-group">
+        <i class="fa fa-phone"></i>
+        <input type="tel" placeholder="Phone Number" />
+      </div>
+      <div class="form-group dob-input">
+        <i class="fa fa-calendar"></i>
+        <input type="date" placeholder="Staff Date Of Birth" />
+      </div>
+      <div class="buttons">
+        <button class="cancel">CANCEL</button>
+        <button class="create">CREATE ACCOUNT</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
